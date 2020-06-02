@@ -1,89 +1,50 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const App: () => React$Node = () => {
+import React, {Component} from 'react';
+import {Text, View, Image, TextInput} from 'react-native';
+const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <Text>Helo aaa candra</Text>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <View>
+      <View style={{width: 80, height: 80, backgroundColor: '#3498db'}} />
+      <Text>halo</Text>
+      <Candra />
+      <Text>Mila</Text>
+      <Photo />
+      <TextInput style={{borderWidth: 2}} />
+      <BoxGreen />
+      <Profile />
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
+const Candra = () => {
+  return <Text>Candra Dwi Kusuma</Text>;
+};
 
+const Photo = () => {
+  return (
+    <Image
+      source={{uri: 'https://placeimg.com/100/100/tech'}}
+      style={{width: 100, height: 100}}
+    />
+  );
+};
+
+class BoxGreen extends Component {
+  render() {
+    return <Text>Ini dibuat dari class</Text>;
+  }
+}
+
+class Profile extends Component {
+  render() {
+    return (
+      <View>
+        <Image
+          source={{uri: 'https://placeimg.com/100/100/animals'}}
+          style={{width: 100, height: 100, borderRadius: 50}}
+        />
+        <Text style={{fontSize: 24, color: 'blue'}}>Ini gambar hewan</Text>
+      </View>
+    );
+  }
+}
 export default App;
