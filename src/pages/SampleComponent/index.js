@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Text, View, Image, TextInput} from 'react-native';
-const App = () => {
+import {View, Text, TextInput, Image} from 'react-native';
+
+const SampleComponent = () => {
   return (
     <View>
       <View style={{width: 80, height: 80, backgroundColor: '#3498db'}} />
@@ -47,4 +48,5 @@ class Profile extends Component {
     );
   }
 }
-export default App;
+
+export default SampleComponent;
